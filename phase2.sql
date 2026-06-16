@@ -104,14 +104,14 @@ having count(*) > 2;
 
 -- Show departments where maximum salary exceeds 85000
 
-select department,max(salary)
+select department,max(salary) as max_salary
 from employees
 group by department
 having max(salary) > 85000;
 
 -- Find the department with the highest average salary.
 
-select department,avg(salary)
+select department,avg(salary) as avg_salary
 from employees
 group by department
 order by avg(salary) desc
@@ -119,7 +119,7 @@ limit 1;
 
 -- Find the city having the maximum number of employees.
 
-select city,count(*)
+select city, count(*) as total_employees
 from employees
 group by city
 order by count(*) desc
