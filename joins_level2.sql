@@ -70,3 +70,20 @@ limit 1;
 
 -- Find the department having the maximum number of employees.
 
+select d.department_name, count(e.emp_id)
+from employees_join e
+inner join departments d
+on e.department_id = d.department_id
+group by d.department_name
+order by count(e.emp_id) desc
+limit 1;
+
+-- Display all departments, including those with zero employees.
+
+select d.department_name
+from employees_join e
+right join departments d
+on d.department_id = e.department_id
+group by d.department_name;
+
+
