@@ -30,3 +30,4 @@ select emp_name from employees_join where department_id IN (select department_id
 
 select emp_name from employees_join where department_id NOT IN (select department_id from departments where department_name = 'Marketing');
 
+-- when subquery returns multiple rows then use NOT IN and IN
